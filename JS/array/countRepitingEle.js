@@ -23,3 +23,30 @@ letter.forEach((item) => {
   }
 });
 console.log(letterCount);
+
+
+function firstNonRepeating(input) {
+     let result ={}
+    const inputArray = typeof input === "string" ? input.split("") : input
+    
+    console.log(inputArray)
+    inputArray.forEach((ele) => {
+    if(result[ele]){
+        result[ele]++
+    } else{
+        result[ele] = 1
+    }
+})
+
+let firstEleNonRepite = ""
+
+for(let i =0; i < Input.length; i++){
+    if(result[inputArray[i]] === 1){
+        return firstEleNonRepite = inputArray[i]
+        // break;
+    }
+}
+   return null 
+}
+
+console.log(firstNonRepeating(Input))
