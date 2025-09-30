@@ -49,4 +49,6 @@ for(let i =0; i < Input.length; i++){
    return null 
 }
 
+// const Input = [5, 3, 8, 10, 5, 3, 10, 5, 3, 8, 2, 6, 8];
+const Input = 'swiss';
 console.log(firstNonRepeating(Input))
