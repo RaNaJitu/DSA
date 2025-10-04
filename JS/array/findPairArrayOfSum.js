@@ -1,3 +1,4 @@
+// Two Sum
 const findPairs = (arr) => {
     let pairs = [];
     let seen = [];
