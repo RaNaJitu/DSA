@@ -64,7 +64,39 @@ Constraints:
 
 s consists of parentheses only '()[]{}'. 
 
- 
+ function isValid(s) {
+    const stack = [];
+    const map = {
+        ')': '(',
+        ']': '[',
+        '}': '{'
+    };
+
+    for (let char of s) {
+        if (['(', '[', '{'].includes(char)) {
+            console.log(char)
+            stack.push(char);
+        } else {
+            console.log(stack.length)
+            console.log(stack[stack.length - 1] )
+            console.log(map[char])
+            if (stack.length === 0 || stack[stack.length - 1] !== map[char]) {
+                return false;
+            }
+            stack.pop();
+        }
+    }
+
+    return stack.length === 0;
+}
+
+// Test cases
+console.log(isValid("()"));       // true
+// console.log(isValid("()[]{}"));   // true
+// console.log(isValid("(]"));       // false
+// console.log(isValid("{[()]}"));   // true
+// console.log(isValid("([)]"));     // false
+
 
  
 
