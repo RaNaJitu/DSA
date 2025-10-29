@@ -31,3 +31,33 @@ function mergeIntervalsBruteForce(intervals) {
 
   return merged;
 }
+
+
+console.log(mergeIntervalsBruteForce([[1,3], [2,6], [8,10], [15,18]])
+)
+
+
+
+
+function mergeIntervalsOptimized(intervals) {
+  if (intervals.length === 0) return [];
+
+  intervals.sort((a, b) => a[0] - b[0]); // sort by start time
+  const result = [intervals[0]];
+
+  for (let i = 1; i < intervals.length; i++) {
+    const prev = result[result.length - 1];
+    const curr = intervals[i];
+
+    if (curr[0] <= prev[1]) {
+      // overlap — merge them
+      prev[1] = Math.max(prev[1], curr[1]);
+    } else {
+      // no overlap — add new interval
+      result.push(curr);
+    }
+  }
+
+  return result;
+}
+
