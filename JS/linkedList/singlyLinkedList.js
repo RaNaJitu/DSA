@@ -13,8 +13,10 @@ class SinglyLinkedList {
   }
 
   insertAtEnd(value) {
+    console.log("==LOG== ~ SinglyLinkedList ~ insertAtEnd ~ temp:", value)
     const temp = new Node(value);
 
+    console.log("==LOG== ~ SinglyLinkedList ~ insertAtEnd ~ this.head:", temp) 
     if (this.head !== null) {
       let t1 = this.head;
       while (t1.next !== null) {
@@ -22,6 +24,7 @@ class SinglyLinkedList {
       }
       t1.next = temp;
     } else {
+      console.log("==LOG== ~ SinglyLinkedList ~ insertAtEnd ~ this.head:", this.head) 
       this.head = temp;
     }
   }
@@ -87,10 +90,11 @@ class SinglyLinkedList {
 
 // Usage
 const obj = new SinglyLinkedList();
+// obj.insertAtEnd();
 obj.insertAtEnd(10);
-obj.insertAtEnd(20);
-obj.insertAtEnd(30);
-obj.insertAtBeginning(5);
-obj.insertAtPosition(40, 20);
+// obj.insertAtEnd(20);
+// obj.insertAtEnd(30);
+// obj.insertAtBeginning(5);
+// obj.insertAtPosition(40, 20);
 // obj.deleteNode(30);
 obj.display();
