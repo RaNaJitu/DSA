@@ -1,0 +1,13 @@
+import { EventEmitter } from "events";
+const eventEmitter = new EventEmitter();
+
+  console.log('Statement A');
+  
+  eventEmitter.on('myEvent', (data) => { console.log(data, '-FIRST'); });
+  eventEmitter.emit('myEvent', 'Emitted Statement'); console.log('Statement B')
+  
+  eventEmitter.on('myEvent', (data) => { console.log(data, '-SECOND'); });
+  eventEmitter.emit('myEvent', 'Emitted Statement');
+  console.log('Statement B');
+
+//Statement A //Statement B //FIRST //SECOND //Emitted Statement
