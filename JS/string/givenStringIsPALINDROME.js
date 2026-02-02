@@ -50,3 +50,9 @@ point: https://workat.tech/company/google/interview-questions/problem-solving
 pascal's Triangle
 
 */
+const palStr = 'MADAM';
+let revStr = '';
+for(let i = palStr.length -1; i >=0; i--){
+    revStr += palStr[i];
+}
+console.log('==== is Sring Palindrome===>', revStr === palStr ? 'PALINDROME' : 'NOT PALINDROME');

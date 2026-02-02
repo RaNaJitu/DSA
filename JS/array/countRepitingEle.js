@@ -25,6 +25,14 @@ letter.forEach((item) => {
 console.log(letterCount);
 
 
+const res = letter.reduce((acc, val) =>{
+    acc[val] = (acc[val] || 0) + 1
+    return acc
+}, {})
+
+console.log(res)
+
+
 function firstNonRepeating(input) {
      let result ={}
     const inputArray = typeof input === "string" ? input.split("") : input
@@ -50,5 +58,5 @@ for(let i =0; i < Input.length; i++){
 }
 
 // const Input = [5, 3, 8, 10, 5, 3, 10, 5, 3, 8, 2, 6, 8];
-const Input = 'swiss';
-console.log(firstNonRepeating(Input))
+const Input1 = 'swiss';
+console.log(firstNonRepeating(Input1))

@@ -6,6 +6,7 @@ function flatten(input) {
   input.forEach((ele) => {
     if (Array.isArray(ele)) {
       flatten(ele); // recursion for nested arrays
+      result.push(...flatten(ele)); // spread operator to push elements
     } else {
       result.push(ele);
     }
